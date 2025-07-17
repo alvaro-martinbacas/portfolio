@@ -1,0 +1,17 @@
+Archivos=ch130.tsp a280.tsp pr144.tsp u1060.tsp d18512.tsp 
+Semillas=76737859 77637859 56739877
+Algoritmos=generacional estacionario
+K_GREEDY=5
+individuos_iniciales=100
+numero_max_elites=1 2
+k_best_gen=2 3
+k_best_est=2
+k_worst_gen=3
+k_worst_est=2
+parada_iteraciones=50000
+parada_tiempo=60     
+porcent_cruce_gen=0.7
+porcent_mutacion=0.1
+individuos_iniciales_aleatorios=0.8
+individuos_iniciales_greedy=0.2
+tipo_cruce=OX2 MOC
