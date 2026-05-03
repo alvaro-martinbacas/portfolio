@@ -1,0 +1,483 @@
+/* === Alertas flotantes globales === */
+.alerta-flotante {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 320px;
+  max-width: 90vw;
+  z-index: 2000;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+  transition: opacity 0.3s;
+}
+.alerta-flotante.error {
+  background: #e53935;
+  color: #fff;
+  border: 1.5px solid #b71c1c;
+}
+.alerta-flotante.success {
+  background: #43a047;
+  color: #fff;
+  border: 1.5px solid #1b5e20;
+}
+.alerta-flotante.warning {
+  background: #ffa726;
+  color: #222;
+  border: 1.5px solid #f57c00;
+}
+/* === General Cards === */
+.card {
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.card-title {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.card-text {
+  color: #42b983;
+  font-weight: bold;
+}
+
+/* === Tables === */
+.table {
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 0.9rem;
+}
+.table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  border-bottom-width: 2px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+.table td {
+  vertical-align: middle;
+}
+
+/* === Badges === */
+.badge {
+  border-radius: 20px;
+  padding: 0.5em 1em;
+  font-size: 0.9em;
+}
+
+/* === Buttons === */
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  min-width: 120px;
+  font-size: 0.97rem;
+}
+.btn i {
+  font-size: 0.9rem;
+}
+
+/* === Modals === */
+.modal-backdrop, .modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content, .modal-custom {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  min-width: 320px;
+  max-width: 500px;
+  width: 100%;
+  margin: 5% auto;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.modal-body {
+  margin-bottom: 20px;
+}
+
+/* === Forms === */
+.form-select, .form-control {
+  border-radius: 0.5rem;
+}
+
+/* === Responsive Tables === */
+@media (max-width: 768px) {
+  .table {
+    font-size: 0.9rem;
+  }
+  .btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  .table th, .table td {
+    font-size: 0.97rem;
+    padding: 0.4rem 0.3rem;
+  }
+  .table-responsive {
+    padding-bottom: 1rem;
+  }
+}
+
+/* === Utility === */
+.overflow-hidden {
+  overflow: hidden;
+}
+.text-center {
+  text-align: center;
+}
+.text-muted {
+  color: #6c757d;
+}
+
+/* === Dashboard, Admin, Login, Registro, etc. === */
+.dashboard-container, .gimnasio-card, .form-box, .login-form {
+  background: #f1f0ea;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.admin-logo, .login-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 16px;
+  border: 2px solid #e0ddcf;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(44, 35, 46, 0.08);
+}
+
+/* === Avatar, Medal, QR, etc. === */
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: #6c757d;
+}
+
+/* Estilos de medallas */
+.medal-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.medal-icon i {
+  filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.2));
+  opacity: 1;
+  font-size: 2rem;
+}
+
+.medal-DIAS_SEGUIDOS {
+  background: linear-gradient(135deg, #fff5f5, #ffe5e5);
+  border: 2px solid #ffcdd2;
+}
+
+.medal-TOTAL_DIAS {
+  background: linear-gradient(135deg, #fff8e1, #ffecb3);
+  border: 2px solid #ffe082;
+}
+
+.medal-SEMANAS_SEGUIDAS {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  border: 2px solid #90caf9;
+}
+
+.medal-icon::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(255,255,255,0.1) 50%,
+    transparent 100%
+  );
+  transform: rotate(45deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+.medal-card {
+  overflow: hidden;
+}
+
+.qr-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+.qr-code {
+  width: 90%;
+  max-width: 320px;
+  height: auto;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  border: 2px dashed #dee2e6;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.qr-code:hover {
+  transform: scale(1.05);
+  border-color: #474448;
+  background: #fff;
+}
+
+/* === Estilos de Aforo === */
+.aforo-actual-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.2rem;
+  margin: 0 30px;
+  min-width: 260px;
+  max-width: 370px;
+  box-shadow: none;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1.2rem;
+}
+
+.aforo-bajo {
+  background: #d4edda;
+  color: #155724;
+}
+
+.aforo-medio {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.aforo-alto {
+  background: #ffe0b2;
+  color: #b26a00;
+}
+
+.aforo-muyalto {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.aforo-desconocido {
+  background: #f5f5f5;
+  color: #888;
+}
+
+.chart-scroll-x {
+  position: relative;
+  height: 300px;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.ocupacion-canvas {
+  min-width: 1200px;
+  max-width: 100%;
+  background: #fff;
+}
+
+.stat-box {
+  background: #6b95f1ab;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  box-shadow: 0 1px 6px 0 rgba(0,0,0,0.04);
+}
+
+.stat-sep {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  color: #888;
+  display: block;
+}
+
+.stat-value {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #2D232E;
+}
+
+@media (max-width: 768px) {
+  .ocupacion-canvas {
+    min-width: 1800px;
+    height: 300px;
+  }
+}
+
+/* === Background Images System === */
+.background-container {
+  position: relative;
+  background-color: #F1F0EA;
+  min-height: 100vh;
+  padding-top: 2rem;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  z-index: 0;
+  filter: grayscale(20%) blur(1px);
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    rgba(45, 35, 46, 0.3) 0%, 
+    rgba(83, 75, 82, 0.2) 50%,
+    rgba(241, 240, 234, 0.8) 100%);
+  z-index: 1;
+}
+
+/* === Logo Global Styles === */
+.app-logo {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 4px solid rgba(241, 240, 234, 0.8);
+  padding: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 10px 30px rgba(45, 35, 46, 0.2);
+  transition: all 0.3s ease;
+  z-index: 20;
+  position: relative;
+  display: block;
+}
+
+.app-logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(45, 35, 46, 0.3);
+}
+
+.logo-container {
+  position: relative;
+  display: inline-block;
+  animation: fadeInDown 1s ease-out;
+  z-index: 15;
+}
+
+.logo-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(71, 68, 72, 0.1) 0%, transparent 70%);
+  animation: pulse 3s ease-in-out infinite;
+  z-index: 5;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive logo styles */
+@media (max-width: 768px) {
+  .app-logo {
+    width: 150px;
+    height: 150px;
+    padding: 8px;
+  }
+  
+  .logo-glow {
+    width: 170px;
+    height: 170px;
+  }
+}
+
+/* Specific background images */
+.bg-fondo1 { background-image: url('./fondo1.jpg'); }
+.bg-fondo2 { background-image: url('./fondo2.jpg'); }
+.bg-fondo3 { background-image: url('./fondo3.jpg'); }
+.bg-fondo4 { background-image: url('./fondo4.jpg'); }
+.bg-fondo5 { background-image: url('./fondo5.jpg'); }
+.bg-fondo6 { background-image: url('./fondo6.jpg'); }
+.bg-fondo7 { background-image: url('./fondo7.png'); }
+

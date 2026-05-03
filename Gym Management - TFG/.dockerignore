@@ -1,0 +1,27 @@
+# Git
+.git/
+.gitignore
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Documentation temporal
+*.md
+!README-Docker.md
+
+# Docker files (para evitar copiar en contextos anidados)
+docker-compose.yml
+docker-compose.override.yml
+
+# Database files
+database/
+
+# Logs
+*.log
+logs/

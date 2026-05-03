@@ -1,0 +1,104 @@
+/* Importar fuentes desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&family=Fira+Mono&display=swap');
+
+
+/* Paleta de colores */
+:root {
+  --color-primary: #474448;
+  --color-secondary: #2d232e;
+  --color-accent: #e0ddcf;
+  --color-muted: #534b52;
+  --color-background: #e0ddcf;
+
+  --font-main: 'Roboto', Arial, Helvetica, sans-serif;
+  --font-heading: 'Montserrat', Arial, Helvetica, sans-serif;
+  --font-mono: 'Fira Mono', 'Consolas', monospace;
+}
+
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-primary);
+  font-family: var(--font-main);
+  line-height: 1.6;
+}
+
+/* Encabezados */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-muted);
+  margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+/* Enlaces */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--color-muted);
+}
+
+/* Botones */
+.button, button {
+  background: var(--color-primary);
+  color: var(--color-accent);
+  border: none;
+  padding: 0.75em 1.5em;
+  border-radius: 4px;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.button:hover, button:hover {
+  background: var(--color-muted);
+}
+
+/* Inputs */
+input, textarea, select {
+  font-family: var(--font-main);
+  border: 1px solid var(--color-muted);
+  border-radius: 4px;
+  padding: 0.5em;
+  background: #fff;
+  color: var(--color-primary);
+  margin-bottom: 1em;
+}
+
+/* Tarjetas */
+.card {
+  background: #fff;
+  border: 1px solid var(--color-accent);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(44, 35, 46, 0.05);
+  padding: 1.5em;
+  margin-bottom: 2em;
+}
+
+/* Código */
+code, pre {
+  font-family: var(--font-mono);
+  background: var(--color-accent);
+  color: var(--color-secondary);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+/* Utilidades */
+.text-center { text-align: center; }
+.text-muted { color: var(--color-muted); }
+.bg-primary { background: var(--color-primary); color: var(--color-accent); }
+.bg-accent { background: var(--color-accent); color: var(--color-primary); }

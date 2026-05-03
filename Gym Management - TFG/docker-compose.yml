@@ -1,0 +1,75 @@
+version: '3.8'
+
+services:
+  # Base de datos PostgreSQL
+  postgres:
+    image: postgres:15-alpine
+    container_name: gimnasios-db
+    environment:
+      POSTGRES_DB: gestion_gimnasios
+      POSTGRES_USER: gym_user
+      POSTGRES_PASSWORD: gym_password
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/01-init.sql
+    networks:
+      - gimnasios-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gym_user -d gestion_gimnasios"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Backend Spring Boot
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: gimnasios-backend
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/gestion_gimnasios
+      SPRING_DATASOURCE_USERNAME: gym_user
+      SPRING_DATASOURCE_PASSWORD: gym_password
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.PostgreSQLDialect
+      SPRING_PROFILES_ACTIVE: docker
+      CORS_ALLOWED_ORIGINS: http://localhost:3000
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - gimnasios-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # Frontend Vue.js
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: gimnasios-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - gimnasios-network
+    environment:
+      VITE_API_BASE_URL: http://localhost:8080
+
+volumes:
+  postgres_data:
+    driver: local
+
+
+networks:
+  gimnasios-network:
+    driver: bridge
