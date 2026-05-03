@@ -10,6 +10,12 @@ Developed as part of a university course on Metaheuristics, this project tackles
 ### Natural Language Processing (NLP) Project: Ideological Division in Social Media Posts  
 This project applies NLP techniques to analyze ideological polarization in posts from the social media platform X. It involves collecting and preprocessing large datasets of textual data, performing sentiment and thematic analysis, and developing classification models to identify and categorize ideological stances. The project highlights challenges related to language variability and social context, aiming to provide insights into how ideological divisions manifest in online discourse.
 
+
+### Final Degree Project – Full-Stack Application for Gym Management
+Developed as the Final Degree Project for the Degree’s in Computer Engineering.
+Backend built with Spring Boot and frontend with Vue.js.
+The application enables comprehensive management of a gym or gym chain, handling entities such as users, group classes, workout plans and exercises. It also includes a QR-based access system with advanced analytics.
+
 ---
 
 Feel free to explore the projects and the code for more details.
